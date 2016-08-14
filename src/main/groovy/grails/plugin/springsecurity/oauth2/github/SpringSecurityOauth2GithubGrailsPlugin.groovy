@@ -1,8 +1,8 @@
-package spring.security.oauth2.github
+package grails.plugin.springsecurity.oauth2.github
 
 import grails.plugin.springsecurity.ReflectionUtils
 import grails.plugin.springsecurity.SpringSecurityUtils
-import grails.plugin.springsecurity.oauth2.GithubOAuth2Service
+import grails.plugin.springsecurity.oauth2.github.GithubOAuth2Service
 import grails.plugin.springsecurity.oauth2.SpringSecurityOauth2BaseService
 import grails.plugin.springsecurity.oauth2.exception.OAuth2Exception
 import grails.plugins.Plugin

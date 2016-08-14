@@ -1,4 +1,4 @@
-package spring.security.oauth2.github
+package grails.plugin.springsecurity.oauth2.github
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

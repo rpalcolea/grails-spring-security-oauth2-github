@@ -1,4 +1,4 @@
-package grails.plugin.springsecurity.oauth2
+package grails.plugin.springsecurity.oauth2.github
 
 import com.github.scribejava.apis.GitHubApi
 import com.github.scribejava.core.builder.api.DefaultApi20
@@ -9,7 +9,6 @@ import grails.plugin.springsecurity.oauth2.service.OAuth2AbstractProviderService
 import grails.plugin.springsecurity.oauth2.token.OAuth2SpringToken
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
-import spring.security.oauth2.github.GithubOauth2SpringToken
 
 @CompileStatic
 @Slf4j

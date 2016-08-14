@@ -1,4 +1,4 @@
-package spring.security.oauth2.github
+package grails.plugin.springsecurity.oauth2.github
 
 import com.github.scribejava.core.model.OAuth2AccessToken
 import grails.plugin.springsecurity.oauth2.token.OAuth2SpringToken
