@@ -48,11 +48,11 @@ dependencies {
 }
 
 grailsPublish {
-    githubSlug = 'rpalcolea/grails-spring-security-oauth2-google'
+    githubSlug = 'rpalcolea/grails-spring-security-oauth2-github'
     license {
         name = 'Apache-2.0'
     }
-    title = "Spring Security Oauth2 Google Provider"
+    title = "Spring Security Oauth2 Github Provider"
     desc = "This plugin provides the capability to authenticate via Github-oauth provider. Depends on grails-spring-security-oauth2."
     developers = [rpalcolea:"Roberto Perez Alcolea"]
     portalUser = ""

@@ -24,7 +24,7 @@ grails:
         springsecurity:
             oauth2:
                 providers:
-                    google:
+                    github:
                         api_key: 'github-client-id'               #needed
                         api_secret: 'github-client-secret'         #needed
                         successUri: "/oauth2/github/success"    #optional

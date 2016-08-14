@@ -16,7 +16,7 @@
 security {
     oauth2 {
         providers {
-            google {
+            github {
                 successUri = "/oauth2/github/success"
                 failureUri = "/oauth2/github/failure"
                 callback = "/oauth2/github/callback"
