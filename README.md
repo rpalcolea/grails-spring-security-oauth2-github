@@ -1,6 +1,7 @@
 Spring Security OAuth2 Github Plugin
 ====================================
 
+[![Build Status](https://travis-ci.org/rpalcolea/grails-spring-security-oauth2-github.svg?branch=master)](https://travis-ci.org/rpalcolea/grails-spring-security-oauth2-github)
 [ ![Download](https://api.bintray.com/packages/rpalcolea/plugins/spring-security-oauth2-github/images/download.svg) ](https://bintray.com/rpalcolea/plugins/spring-security-oauth2-github/_latestVersion)
 
 Add a Github OAuth2 provider to the [Spring Security OAuth2 Plugin](https://github.com/MatrixCrawler/grails-spring-security-oauth2) by @MatrixCrawler (Johannes Brunswicker).
