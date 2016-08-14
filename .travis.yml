@@ -1,8 +1,7 @@
 language: groovy
 sudo: false
 jdk:
-  - oraclejdk7
+  - oraclejdk8
 script:
-  - ./grailsw compile
-  - ./grailsw test-app
-  - ./grailsw packagePlugin
+  - ./gradlew compileGroovy
+  - ./grailsw check
