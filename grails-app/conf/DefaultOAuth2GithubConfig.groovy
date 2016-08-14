@@ -1,4 +1,4 @@
-/* Copyright 2006-2016 the original author or authors.
+/* Copyright 2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ security {
                 successUri = "/oauth2/github/success"
                 failureUri = "/oauth2/github/failure"
                 callback = "/oauth2/github/callback"
-                api_key = "changeme_apikey"
-                api_secret = "changeme_apisecret"
+                api_key = null
+                api_secret = null
             }
         }
     }

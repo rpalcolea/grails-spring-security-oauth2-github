@@ -1,14 +1,10 @@
 buildscript {
-    ext {
-        grailsVersion = project.grailsVersion
-    }
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2"
     }
 }
 
@@ -19,13 +15,6 @@ apply plugin:"eclipse"
 apply plugin:"idea"
 apply plugin:"org.grails.grails-plugin"
 apply plugin:"org.grails.grails-plugin-publish"
-apply plugin:"org.grails.grails-gsp"
-apply plugin:"asset-pipeline"
-
-ext {
-    grailsVersion = project.grailsVersion
-    gradleWrapperVersion = project.gradleWrapperVersion
-}
 
 repositories {
     mavenLocal()
@@ -42,8 +31,7 @@ dependencyManagement {
 dependencies {
     provided 'javax.servlet:javax.servlet-api:3.1.0'
     provided 'org.grails:grails-dependencies'
-    compile 'org.codehaus.groovy:groovy-all:2.4.6'
-    provided 'org.grails.plugins:spring-security-core:3.+'
+    provided 'org.grails.plugins:spring-security-core:3.0.0'
     provided 'org.grails.plugins:spring-security-oauth2:1.1.0'
 }
 
@@ -56,9 +44,5 @@ grailsPublish {
     desc = "This plugin provides the capability to authenticate via Github-oauth provider. Depends on grails-spring-security-oauth2."
     developers = [rpalcolea:"Roberto Perez Alcolea"]
     portalUser = ""
-    portalPassword = ""    
-}
-
-assets {
-    packagePlugin = true
+    portalPassword = ""
 }
