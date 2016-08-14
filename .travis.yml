@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
 script:
   - ./gradlew compileGroovy
-  - ./grailsw check
+  - ./gradlew check
