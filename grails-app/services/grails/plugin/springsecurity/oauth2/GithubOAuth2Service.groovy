@@ -7,9 +7,11 @@ import grails.converters.JSON
 import grails.plugin.springsecurity.oauth2.exception.OAuth2Exception
 import grails.plugin.springsecurity.oauth2.service.OAuth2AbstractProviderService
 import grails.plugin.springsecurity.oauth2.token.OAuth2SpringToken
+import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import spring.security.oauth2.github.GithubOauth2SpringToken
 
+@CompileStatic
 @Slf4j
 class GithubOAuth2Service extends OAuth2AbstractProviderService {
 
@@ -45,10 +47,10 @@ class GithubOAuth2Service extends OAuth2AbstractProviderService {
             log.error("Error parsing response from {}. Response:\n{}", providerID, response.body)
             throw new OAuth2Exception("Error parsing response from " + providerID, e)
         }
-        if (!user?.email) {
+        if (user && !user['mail']) {
             log.error("No user email from {}. Response was:\n{}", providerID, response.body)
             throw new OAuth2Exception("No user id from " + providerID)
         }
-        new GithubOauth2SpringToken(accessToken, user?.email, providerID)
+        new GithubOauth2SpringToken(accessToken, (String) user['mail'], providerID)
     }
 }
