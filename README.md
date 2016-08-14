@@ -29,8 +29,8 @@ grails:
             oauth2:
                 providers:
                     github:
-                        api_key: 'github-client-id'               #needed
-                        api_secret: 'github-client-secret'         #needed
+                        api_key: 'github-client-id'             #needed
+                        api_secret: 'github-client-secret'      #needed
                         successUri: "/oauth2/github/success"    #optional
                         failureUri: "/oauth2/github/failure"    #optional
                         callback: "/oauth2/github/callback"     #optional

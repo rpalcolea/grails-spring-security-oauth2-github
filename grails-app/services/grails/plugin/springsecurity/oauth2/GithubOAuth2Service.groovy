@@ -7,50 +7,47 @@ import grails.converters.JSON
 import grails.plugin.springsecurity.oauth2.exception.OAuth2Exception
 import grails.plugin.springsecurity.oauth2.service.OAuth2AbstractProviderService
 import grails.plugin.springsecurity.oauth2.token.OAuth2SpringToken
-import grails.transaction.Transactional
+import groovy.util.logging.Slf4j
 import spring.security.oauth2.github.GithubOauth2SpringToken
 
-@Transactional
+@Slf4j
 class GithubOAuth2Service extends OAuth2AbstractProviderService {
-    @Override
+
+    static transactional = false
+
     String getProviderID() {
-        return 'github'
+        'github'
     }
 
-    @Override
     Class<? extends DefaultApi20> getApiClass() {
-        GitHubApi.class
+        GitHubApi
     }
 
-    @Override
     String getProfileScope() {
-        return 'https://api.github.com/user'
+        'https://api.github.com/user'
     }
 
-    @Override
     String getScopes() {
-        return 'https://api.github.com/user'
+        'https://api.github.com/user'
     }
 
-    @Override
     String getScopeSeparator() {
-        return " "
+        " "
     }
 
-    @Override
     OAuth2SpringToken createSpringAuthToken(OAuth2AccessToken accessToken) {
         def user
         def response = getResponse(accessToken)
         try {
-            log.debug("JSON response body: " + accessToken.rawResponse)
+            log.debug("JSON response body: {}", accessToken.rawResponse)
             user = JSON.parse(response.body)
-        } catch (Exception exception) {
-            log.error("Error parsing response from " + getProviderID() + ". Response:\n" + response.body)
-            throw new OAuth2Exception("Error parsing response from " + getProviderID(), exception)
+        } catch (Exception e) {
+            log.error("Error parsing response from {}. Response:\n{}", providerID, response.body)
+            throw new OAuth2Exception("Error parsing response from " + providerID, e)
         }
         if (!user?.email) {
-            log.error("No user email from " + getProviderID() + ". Response was:\n" + response.body)
-            throw new OAuth2Exception("No user id from " + getProviderID())
+            log.error("No user email from {}. Response was:\n{}", providerID, response.body)
+            throw new OAuth2Exception("No user id from " + providerID)
         }
         new GithubOauth2SpringToken(accessToken, user?.email, providerID)
     }
