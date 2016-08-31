@@ -29,7 +29,7 @@ class GithubOAuth2Service extends OAuth2AbstractProviderService {
     }
 
     String getScopes() {
-        'https://api.github.com/user'
+        'user'
     }
 
     String getScopeSeparator() {
