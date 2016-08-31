@@ -25,7 +25,7 @@ class GithubOAuth2Service extends OAuth2AbstractProviderService {
     }
 
     String getProfileScope() {
-        'user'
+        'https://api.github.com/user'
     }
 
     String getScopes() {
